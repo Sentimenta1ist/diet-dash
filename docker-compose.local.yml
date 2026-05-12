@@ -1,0 +1,47 @@
+version: "3.8"
+
+services:
+
+  postgres:
+    image: postgres:bullseye
+    environment:
+      POSTGRES_USER: dietdash
+      POSTGRES_PASSWORD: dietdash
+      POSTGRES_DB: dietdash
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_local_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U dietdash -d dietdash"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - "5001:5000"
+    env_file:
+      - ./backend/.env.local
+    volumes:
+      - ./backend/data:/app/data
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        REACT_APP_API_URL: http://localhost:5001/api
+    depends_on:
+      - backend
+    ports:
+      - "3000:80"
+
+volumes:
+  postgres_local_data:

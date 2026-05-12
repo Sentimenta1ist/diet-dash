@@ -1,0 +1,127 @@
+version: "3.8"
+
+# Adapted for Coolify (self-hosted PaaS on the same VPS).
+#
+# Changes from the original:
+#   - backend: builds from ./backend instead of pulling from Docker Hub
+#   - frontend: builds from ./frontend instead of pulling from Docker Hub
+#   - Priority labels added to prevent Traefik routing conflicts:
+#       backend router: priority 10  (more specific — matches /api prefix)
+#       frontend router: priority 1  (catch-all)
+#   - JAVA_OPTS removed (Node.js, not JVM)
+#   - Spring-specific env vars removed; Node env vars added
+#
+# Before deploying:
+#   1. Set all variables listed in .env.example in Coolify → Environment Variables
+#   2. Copy diet-dash-backend/src/main/resources/utils/main_data.csv
+#      to backend/data/main_data.csv for the /api/products/fill endpoint
+#   3. In Coolify → Service → Domains: set diet-dash.com for the frontend service
+#      and enable SSL (Let's Encrypt). Coolify configures Traefik automatically.
+#   4. Ensure DNS A record for diet-dash.com points to this VPS.
+
+services:
+
+  postgres:
+    image: postgres:bullseye
+    container_name: postgres_container
+    restart: always
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    mem_limit: 228m
+    cpus: "0.3"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    command: [
+      "postgres",
+      "-c", "max_connections=20",
+      "-c", "shared_buffers=16MB",
+      "-c", "work_mem=2MB",
+      "-c", "maintenance_work_mem=8MB",
+      "-c", "max_parallel_workers=0",
+      "-c", "effective_cache_size=48MB"
+    ]
+    networks:
+      - diet-net
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: backend
+    restart: always
+    environment:
+      DATABASE_URL: postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}
+      JWT_SECRET: ${JWT_SECRET}
+      MAIL_PASSWORD: ${MAIL_PASSWORD}
+      MAILTRAP_API_TOKEN: ${MAILTRAP_API_TOKEN}
+      PORT: "5000"
+      DOMAIN: ${DOMAIN}
+    depends_on:
+      postgres:
+        condition: service_healthy
+    mem_limit: 256m
+    cpus: "0.5"
+    expose:
+      - "5000"
+    labels:
+      - traefik.enable=true
+      # Routes /api/* to the backend — priority 10 wins over frontend catch-all
+      - traefik.http.routers.backend.rule=Host(`${DOMAIN}`) && PathPrefix(`/api`)
+      - traefik.http.routers.backend.priority=10
+      - traefik.http.routers.backend.entrypoints=https
+      - traefik.http.routers.backend.tls=true
+      - traefik.http.routers.backend.tls.certresolver=letsencrypt
+      - traefik.http.services.backend.loadbalancer.server.port=5000
+      # HTTP → HTTPS redirect for /api
+      - traefik.http.routers.backend-http.rule=Host(`${DOMAIN}`) && PathPrefix(`/api`)
+      - traefik.http.routers.backend-http.priority=10
+      - traefik.http.routers.backend-http.entrypoints=http
+      - traefik.http.routers.backend-http.middlewares=redirect-to-https
+    networks:
+      - diet-net
+      - coolify
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: frontend
+    restart: always
+    mem_limit: 32m
+    cpus: "0.2"
+    expose:
+      - "80"
+    labels:
+      - traefik.enable=true
+      # Routes everything except /api to the frontend (SPA) — priority 1
+      - traefik.http.routers.frontend.rule=Host(`${DOMAIN}`)
+      - traefik.http.routers.frontend.priority=1
+      - traefik.http.routers.frontend.entrypoints=https
+      - traefik.http.routers.frontend.tls=true
+      - traefik.http.routers.frontend.tls.certresolver=letsencrypt
+      - traefik.http.services.frontend.loadbalancer.server.port=80
+      # HTTP → HTTPS redirect
+      - traefik.http.routers.frontend-http.rule=Host(`${DOMAIN}`)
+      - traefik.http.routers.frontend-http.priority=1
+      - traefik.http.routers.frontend-http.entrypoints=http
+      - traefik.http.routers.frontend-http.middlewares=redirect-to-https
+    networks:
+      - diet-net
+      - coolify
+
+networks:
+  diet-net:
+    driver: bridge
+  # Coolify's Traefik proxy network — exists on the host after Coolify installation.
+  coolify:
+    external: true
+
+volumes:
+  postgres_data:
