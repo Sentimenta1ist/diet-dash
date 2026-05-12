@@ -42,7 +42,7 @@ const profilesDataSlice = createSlice({
         state.error = null;
       })
       .addCase(fetchProfiles.fulfilled, (state, action) => {
-        state.profiles = action.payload;
+        state.profiles = Array.isArray(action.payload) ? action.payload : [];
         state.profilesLoading = false;
       })
       .addCase(fetchProfiles.rejected, (state, action) => {

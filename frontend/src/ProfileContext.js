@@ -27,7 +27,8 @@ export const ProfileProvider = ({ children }) => {
   useEffect(() => {
     if (initialized && profiles.length > 0) {
       const storedProfileId = localStorage.getItem("selectedProfileId");
-      let profileToSelect = profiles.find((p) => p.id === storedProfileId) || profiles[0];
+      const safeProfiles = Array.isArray(profiles) ? profiles : [];
+      let profileToSelect = safeProfiles.find((p) => p.id === storedProfileId) || safeProfiles[0];
 
       if (selectedProfile?.id !== profileToSelect.id) {
         handleProfileSelect(profileToSelect);
