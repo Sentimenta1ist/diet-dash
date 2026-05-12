@@ -1,0 +1,293 @@
+@value shared: "../../../../values/shared.module.css";
+@value secondary-critical-width, primary, back1 from shared;
+
+.profileTable {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 16px;
+    border: 1px solid rgba(205, 236, 198, 1);
+    position: relative;
+}
+
+.headerRow {
+    display: flex;
+    flex-direction: row;
+    font-weight: 400;
+    color: #10260db3;
+}
+
+.headerCol {
+    flex: 1;
+    padding: 8px;
+    text-align: center;
+    font-family: "Rubik";
+    font-size: 16px;
+    border-right: 1px solid rgba(205, 236, 198, 1);
+}
+
+.headerCol:last-child {
+    border-right: none;
+}
+
+.tableRowWrapper {
+    position: relative;
+}
+
+.tableRow {
+    color: rgba(16, 38, 13, 0.7);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.tableCol {
+    border-right: 1px solid rgba(205, 236, 198, 1);
+    padding: 4px;
+    text-align: center;
+    color: #212529;
+    font-family: "Rubik";
+    font-size: 16px;
+    flex: 1;
+}
+
+.tableCol:last-child {
+    border-right: none;
+}
+
+.profileName {
+    color: rgba(84, 128, 84, 1);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 4px;
+    text-align: center;
+    border-right: 1px solid rgba(205, 236, 198, 1);
+    flex: 1;
+    overflow: hidden;
+}
+
+.profileName:hover {
+    text-decoration: underline;
+}
+
+.actionsCol {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 4px;
+    flex: 1;
+}
+
+.infoButton {
+    background: none;
+    border: none;
+    color: rgba(84, 128, 84, 1);
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 0;
+    display: none;
+}
+
+.infoButton:hover {
+    color: rgba(60, 90, 60, 1);
+}
+
+.deleteButton {
+    background: none;
+    border: none;
+    color: #ff4d4f;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 0;
+}
+
+.deleteButton:hover {
+    color: #cc0000;
+}
+
+.expandedInfo {
+    position: absolute;
+    padding: 16px;
+    top: 70%;
+    right: 0%;
+    transform: translateX(-10%);
+    width: 300px;
+    background-color: back1;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+}
+
+.expandedInfo * {
+    line-height: 24px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.expandedInfo.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.expandedHeaderRow {
+    display: flex;
+    flex-direction: row;
+    font-weight: 400;
+    color: #10260db3;
+}
+
+.expandedHeaderCol {
+    flex: 1;
+    padding: 4px;
+    text-align: center;
+    font-family: "Rubik";
+    font-size: 14px;
+    border-right: 1px solid rgba(205, 236, 198, 1);
+}
+
+.expandedHeaderCol:last-child {
+    border-right: none;
+}
+
+.expandedDataRow {
+    display: flex;
+    flex-direction: row;
+}
+
+.expandedDataCol {
+    flex: 1;
+    padding: 4px;
+    text-align: center;
+    color: #212529;
+    font-family: "Rubik";
+    font-size: 14px;
+    border-right: 1px solid rgba(205, 236, 198, 1);
+}
+
+.expandedDataCol:last-child {
+    border-right: none;
+}
+
+/* Mobile Version Styles (applied when isMobileVersion prop is true) */
+.profileTable.mobileVersion {
+    max-height: 100%;
+    overflow-y: auto;
+    scrollbar-width: thin;
+}
+
+.profileTable.mobileVersion:last-child {
+}
+
+.profileTable.mobileVersion .headerRow {
+    display: flex;
+}
+
+.profileTable.mobileVersion .headerCol:nth-child(1) {
+    flex: 1 1 auto;
+}
+
+.profileTable.mobileVersion .headerCol:nth-child(2),
+.profileTable.mobileVersion .headerCol:nth-child(3),
+.profileTable.mobileVersion .headerCol:last-child {
+    flex: 0 1 auto;
+    min-width: 80px;
+}
+
+.profileTable.mobileVersion .tableRow {
+    display: flex;
+    flex-direction: row;
+    padding: 8px 0;
+}
+
+.profileTable.mobileVersion .profileName {
+    font-size: 16px;
+    padding: 5px;
+    flex: 1 1 auto;
+    min-width: 80px;
+}
+
+.profileTable.mobileVersion .tableCol {
+    padding: 5px;
+    font-size: 14px;
+    flex: 0 1 auto;
+    min-width: 80px;
+}
+
+.profileTable.mobileVersion .actionsCol {
+    justify-content: center;
+    gap: 5px;
+    flex: 0 1 auto;
+    min-width: 80px;
+}
+
+.profileTable.mobileVersion .infoButton {
+    display: block;
+}
+
+/* Mobile Styles */
+@media (max-width: secondary-critical-width) {
+    .headerRow {
+        display: flex;
+    }
+
+    .headerRow .headerCol:nth-child(4),
+    .headerRow .headerCol:nth-child(5),
+    .headerRow .headerCol:nth-child(6) {
+        display: none;
+    }
+
+    .headerRow .headerCol:nth-child(1) {
+        flex: 1 1 auto;
+    }
+
+    .headerRow .headerCol:nth-child(2),
+    .headerRow .headerCol:nth-child(3),
+    .headerRow .headerCol:last-child {
+        flex: 0 1 auto;
+        min-width: 80px;
+    }
+
+    .tableRow {
+        display: flex;
+        flex-direction: row;
+        padding: 8px 0;
+    }
+
+    .profileName {
+        font-size: 16px;
+        padding: 5px;
+        flex: 1 1 auto;
+        min-width: 80px;
+    }
+
+    .tableCol {
+        padding: 5px;
+        font-size: 14px;
+        flex: 0 1 auto;
+        min-width: 80px;
+    }
+
+    .tableCol:nth-child(4),
+    .tableCol:nth-child(5),
+    .tableCol:nth-child(6) {
+        display: none;
+    }
+
+    .actionsCol {
+        justify-content: center;
+        gap: 5px;
+        flex: 0 1 auto;
+        min-width: 80px;
+    }
+
+    .infoButton {
+        display: block;
+    }
+}
+
+@media (max-width: 450px) {}

@@ -1,0 +1,263 @@
+@value shared: "../../../values/shared.module.css";
+@value primary, secondary, tertiary, kcal-col, protein-col, carbs-col, fat-col, critical-width from shared;
+
+.diet-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+}
+
+.container {
+  min-width: critical-width;
+  max-width: 100% !important;
+  /* Override Bootstrap's default max-width */
+  width: 100% !important;
+  padding: 0 !important;
+}
+
+.date-navigation {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+}
+
+.duplicate-button {
+  display: flex;
+  align-items: center;
+  margin-right: 100%;
+  font-family: "Rubik";
+  border: 1px solid tertiary;
+  background-color: inherit;
+  border-radius: 12px;
+  outline: none;
+}
+
+.duplicate-button:hover {
+  background-color: tertiary;
+}
+
+.arrow-button {
+  outline: none;
+  background: none;
+  color: primary;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2em;
+}
+
+.progress-bars-table {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px;
+  width: 100%;
+  border: 1px solid tertiary;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 16px;
+  box-shadow: 0px 24px 36.6px 0px rgba(0, 0, 0, 0.1),
+    0px 0px 68.1px 0px rgba(0, 0, 0, 0.09),
+    0px 212px 127px 0px rgba(228, 228, 212, 0.05),
+    0px 378px 151px 0px rgba(228, 228, 212, 0.01),
+    0px 590px 165px 0px rgba(228, 228, 212, 0);
+}
+
+.progress-bar-box {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.progress {
+  height: 4px !important;
+}
+
+.progress-bar-calories {
+  background-color: kcal-col !important;
+}
+
+.progress-bar-carbs {
+  background-color: carbs-col !important;
+}
+
+.progress-bar-protein {
+  background-color: protein-col !important;
+}
+
+.progress-bar-fat {
+  background-color: fat-col !important;
+}
+
+.progress-title {
+  font-family: "Rubik";
+  font-weight: 400;
+  color: rgba(6, 33, 2, 1);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.progress-number {
+  font-family: "Rubik";
+  font-weight: 300;
+  color: rgba(6, 33, 2, 1);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.meal-search-table {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 24px;
+  width: 100%;
+  border: 1px solid tertiary;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 16px;
+  box-shadow: 0px 24px 36.6px 0px rgba(0, 0, 0, 0.1),
+    0px 0px 68.1px 0px rgba(0, 0, 0, 0.09),
+    0px 212px 127px 0px rgba(228, 228, 212, 0.05),
+    0px 378px 151px 0px rgba(228, 228, 212, 0.01),
+    0px 590px 165px 0px rgba(228, 228, 212, 0);
+}
+
+.diet-plan {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 32px 24px;
+  width: 100%;
+  border: 1px solid tertiary;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 16px;
+  box-shadow: 0px 24px 36.6px 0px rgba(0, 0, 0, 0.1),
+    0px 0px 68.1px 0px rgba(0, 0, 0, 0.09),
+    0px 212px 127px 0px rgba(228, 228, 212, 0.05),
+    0px 378px 151px 0px rgba(228, 228, 212, 0.01),
+    0px 590px 165px 0px rgba(228, 228, 212, 0);
+}
+
+.diet-plan-header {
+  display: flex;
+  gap: 16px;
+}
+
+.diet-plan-header-text {
+  min-width: 150px;
+  font-family: "Rubik", sans-serif;
+  font-weight: 700;
+  color: rgba(6, 33, 2, 1);
+  opacity: 80%;
+  font-size: 24px;
+}
+
+.datepicker {
+  font-family: "Rubik" !important;
+  font-weight: 400 !important;
+}
+
+.left-side {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-right: 8px !important;
+}
+
+.right-side {
+  display: flex;
+  flex-direction: column;
+  padding-left: 8px !important;
+}
+
+.disabled-input {
+  background-color: transparent !important;
+  color: inherit;
+  cursor: default;
+}
+
+.active-input {
+  background-color: tertiary !important;
+}
+
+.export-row {
+  display: flex;
+  gap: 10px;
+}
+
+/* Mobile styles */
+
+.mobile-container {
+  display: none;
+}
+
+.mobile-image {
+  width: auto;
+  max-height: 28px;
+  object-fit: cover;
+}
+
+.progress-bar-box-mobile {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+}
+
+@media (max-width: critical-width) {
+  .diet-container {
+    display: none !important;
+  }
+
+  .mobile-container {
+    max-width: 800px;
+    display: flex;
+    position: relative;
+    width: 100%;
+    gap: 16px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .export-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.4);
+    /* dimmed background */
+    z-index: 999;
+    /* above everything */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .export-modal-content {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    min-width: 260px;
+    width: 90%;
+    gap: 16px;
+    display: flex;
+  }
+
+  .add-product-button {
+    width: 100%;
+    max-width: 400px;
+    font-family: "Rubik";
+    background-color: primary;
+    color: white;
+    border: none;
+    padding: 16px 32px;
+    outline: none;
+    border-radius: 12px;
+  }
+}

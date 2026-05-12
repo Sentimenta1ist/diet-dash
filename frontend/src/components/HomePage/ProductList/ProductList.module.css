@@ -1,0 +1,218 @@
+@value shared: "../../../values/shared.module.css";
+@value primary, secondary, tertiary, critical-width, secondary-critical-width, font-color, back1, kcal-col, protein-col, carbs-col, fat-col from shared;
+
+.productListContainer {
+  font-family: "Rubik";
+  font-weight: 400;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 32px;
+  text-align: left;
+  background-color: rgba(255, 255, 255, 1) !important;
+  border-radius: 24px;
+  border-color: tertiary !important;
+  border: 1px solid;
+  box-shadow: 0px 24px 36.6px 0px rgba(0, 0, 0, 0.1),
+    0px 0px 68.1px 0px rgba(0, 0, 0, 0.09),
+    0px 212px 127px 0px rgba(228, 228, 212, 0.05),
+    0px 378px 151px 0px rgba(228, 228, 212, 0.01),
+    0px 590px 165px 0px rgba(228, 228, 212, 0);
+}
+
+.noMore {
+  text-align: center;
+  padding: 16px;
+  color: rgba(16, 38, 13, 0.7);
+  font-style: italic;
+}
+
+/* Mobile Styles */
+.mobileHeader {
+  font-size: 24px;
+  color: font-color;
+  font-weight: 700;
+  margin-bottom: 16px;
+  display: none;
+}
+
+.filterRow {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.filterRow button {
+  display: flex;
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  background-color: white;
+  border: #acd1a3 1px solid;
+  transition: background-color 0.3s ease;
+}
+
+.filterRow button.active {
+  background: linear-gradient(to right, primary, #cdecc6);
+  color: white;
+}
+
+.addProductBtnWrapper {
+  border: none;
+  background-color: inherit;
+  display: flex;
+  align-items: center;
+}
+
+.addProductBtn {
+  color: primary;
+}
+
+.mobileSearchTable {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 16px;
+  border: 1px solid tertiary;
+  padding: 16px;
+  display: none;
+}
+
+.mobileResults {
+  margin-top: 16px;
+}
+
+.mobileResultItem {
+  padding: 0;
+}
+
+.mobileResultName {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.mobileResultDetails {
+  font-size: 14px;
+  color: rgba(16, 38, 13, 0.7);
+  margin-top: 4px;
+}
+
+.mobileResultDetails .calories {
+  color: kcal-col;
+}
+
+.mobileResultDetails .protein {
+  color: protein-col;
+}
+
+.mobileResultDetails .carbs {
+  color: carbs-col;
+}
+
+.mobileResultDetails .fat {
+  color: fat-col;
+}
+
+.mobileResultDivider {
+  border: 0;
+  border-top: 1px solid tertiary;
+  margin: 8px 0;
+}
+
+.loading {
+  text-align: center;
+  padding: 16px;
+  color: rgba(16, 38, 13, 0.7);
+}
+
+/* Desktop Styles */
+.desktopLayout {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.productSearchRow {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+.paginationControls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.paginationControls button {
+  margin: 0 10px;
+  font-size: 18px;
+  border: 2px #acd1a3 solid;
+  outline: none;
+  border-radius: 12px;
+  background: rgb(255, 255, 255);
+}
+
+.paginationControls button:hover {
+  background-color: #acd1a3;
+}
+
+/* Media Queries */
+@media (max-width: secondary-critical-width) {
+  .productListContainer {
+    padding: 16px;
+    background-color: back1 !important;
+    border: none;
+    box-shadow: none;
+  }
+
+  .mobileHeader {
+    display: block;
+  }
+
+  .filterRow {
+    justify-content: space-between;
+  }
+
+  .filterRow button {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .mobileSearchTable {
+    display: block;
+  }
+
+  .desktopLayout {
+    display: none;
+  }
+}
+
+@media (min-width: secondary-critical-width) {
+  .filterRow .addProductBtnWrapper {
+    display: none;
+  }
+
+  .filterRow {
+    justify-content: flex-start;
+  }
+
+  .filterRow button {
+    width: 100%;
+  }
+
+  .mobileHeader {
+    display: none;
+  }
+
+  .mobileSearchTable {
+    display: none;
+  }
+
+  .desktopLayout {
+    display: flex;
+  }
+}

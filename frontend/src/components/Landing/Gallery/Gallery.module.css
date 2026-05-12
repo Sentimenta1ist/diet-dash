@@ -1,0 +1,154 @@
+.galleryWrapper {
+  background-color: #FFFFF9;
+  padding: 4vh 6vw;
+  /* Changed from height to min-height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1vw;
+  width: 100%;
+  /* Ensure it takes full width */
+}
+
+.imageSlider {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  max-width: 1200px;
+  border: #548054 8px solid;
+  border-radius: 6vw;
+  width: 100%;
+  /* Full width within parent */
+  aspect-ratio: 16 / 9;
+  /* Maintain aspect ratio for consistent height */
+}
+
+.imageWrapper {
+  display: flex;
+  transition: transform 1s ease;
+}
+
+.imageContainer {
+  flex: 0 0 100%;
+}
+
+.galleryImage {
+  width: 100%;
+  height: 100%;
+  /* Fill container height */
+  object-fit: cover;
+  /* Ensure image scales without distortion */
+}
+
+.navButton {
+  background: #548054;
+  color: #FFFFF9;
+  opacity: 90%;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  width: 4vw;
+  height: 5vh;
+  border-radius: 12px;
+  padding: 12px 24px;
+  cursor: pointer;
+  font-size: 20px;
+  z-index: 10;
+  transition: background 0.3s;
+}
+
+.progressBar {
+  width: 30%;
+  height: 0.5vh;
+  background: #d3d3d3;
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progressIndicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 25%;
+  height: 100%;
+  background: #548054;
+  border-radius: 3px;
+  transition: left 0.5s ease-in-out;
+}
+
+.navButton:hover {
+  opacity: 100%;
+  background: #548054;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .galleryWrapper {
+    padding: 2vh 3vw;
+    /* Reduce padding */
+    min-height: 60vh;
+    /* Reduce minimum height */
+  }
+
+  .gallery {
+    gap: 0.5vw;
+    /* Smaller gap */
+  }
+
+  .imageSlider {
+    border-width: 3px;
+    /* Reduce border thickness */
+    border-radius: 3vw;
+    /* Smaller radius */
+    max-height: 50vh;
+    /* Limit height but allow flexibility */
+  }
+
+  .navButton {
+    width: 8vw;
+    /* Wider buttons for touch */
+    height: 6vh;
+    padding: 8px 16px;
+    font-size: 16px;
+    /* Smaller font */
+  }
+
+  .progressBar {
+    width: 50%;
+    /* Wider progress bar for visibility */
+  }
+}
+
+/* Extra small screens (e.g., 376px width) */
+@media (max-width: 425px) {
+  .galleryWrapper {
+    min-height: 50vh;
+    padding: 0 5px;
+    /* Further reduce height */
+  }
+
+  .imageSlider {
+    border-width: 2px;
+    /* Reduce border thickness */
+    max-height: 40vh;
+  }
+
+  .navButton {
+    width: 9vw;
+    height: 8vh;
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+}

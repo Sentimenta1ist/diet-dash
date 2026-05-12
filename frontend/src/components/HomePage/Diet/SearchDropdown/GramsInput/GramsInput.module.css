@@ -1,0 +1,70 @@
+@value shared: "../../../../../values/shared.module.css";
+@value primary, secondary, tertiary, critical-width from shared;
+
+.search-pickers {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: auto;
+    /* This pushes it to the right of the search field */
+}
+
+.grams-picker {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 12px;
+    border: 1px solid tertiary;
+    padding: 8px;
+    overflow: hidden;
+}
+
+.grams-input {
+    width: 40px;
+    /* Base width for small values */
+    min-width: 20px;
+    /* Minimum width to ensure usability */
+    max-width: 34px;
+    /* Cap the maximum width */
+    border: none !important;
+    padding: 0 0px 0 0 !important;
+    /* Add slight padding for better spacing */
+    outline: none;
+    text-align: right;
+    font-size: 16px;
+    /* Ensure readable text */
+    -webkit-appearance: none;
+    /* Remove iOS default styling */
+    box-sizing: content-box;
+    /* Ensure padding doesn’t affect width */
+}
+
+/* Dynamically adjust width based on content */
+.grams-input:where(:not(:placeholder-shown)) {
+    width: auto;
+    /* Let it grow naturally up to max-width */
+}
+
+.grams-picker>span {
+    padding-left: 2px;
+    white-space: nowrap;
+}
+
+.time-picker {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    border: 1px solid tertiary;
+    padding: 8px;
+}
+
+.time-picker input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    padding: 2px !important;
+    outline: none;
+    -webkit-appearance: none;
+    /* Remove iOS default styling */
+}

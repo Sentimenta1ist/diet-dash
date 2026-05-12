@@ -1,0 +1,59 @@
+@value shared: "../../values/shared.module.css";
+@value primary, secondary, tertiary, critical-width, font-color, back1 from shared;
+
+.languageSelector {
+    position: relative;
+    display: flex;
+}
+
+.languageButton {
+    outline: none;
+    background: transparent;
+    border: 1px solid #548054;
+    color: #548054;
+    padding: 5px 10px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    /* Ensure buttons stretch to fill container */
+    box-sizing: border-box;
+    /* Include padding and border in width */
+}
+
+.languageButton:hover {
+    background: #548054;
+    color: white;
+}
+
+.languageButton.active {
+    background: #548054;
+    color: white;
+}
+
+.dropdownMenu {
+    position: absolute;
+    top: 44px;
+    left: 0;
+    /* Align left edge with toggle button */
+    width: 100%;
+    /* Match the width of the toggle button */
+    background: inherit;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    box-sizing: border-box;
+    /* Ensure padding doesn't affect width */
+}
+
+@media (max-width: critical-width) {
+    .dropdownMenu {
+        top: 100%;
+        margin-top: 4px;
+    }
+}

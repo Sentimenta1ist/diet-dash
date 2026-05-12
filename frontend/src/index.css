@@ -1,0 +1,6 @@
+:root {
+    --primary: rgba(84, 128, 84, 1);
+    --secondary: rgb(72, 147, 56);
+    --tertiary: rgba(205, 236, 198, 1);
+    --critical-width: critical-width: 1200px;
+}

@@ -1,0 +1,12 @@
+@value primary: rgba(84, 128, 84, 1);
+@value secondary: rgb(72, 147, 56);
+@value tertiary: rgba(205, 236, 198, 1);
+@value critical-width: 1200px;
+@value secondary-critical-width: 800px;
+@value font-color: #062102;
+@value back1: #F4FBF2;
+@value kcal-col: #439DEE;
+@value protein-col: #64CC64;
+@value carbs-col: #F5E268;
+@value fat-col: #F16666;
+@value red-pink: #f08080;

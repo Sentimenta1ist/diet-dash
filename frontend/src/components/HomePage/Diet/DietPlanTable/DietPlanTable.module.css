@@ -1,0 +1,119 @@
+@value shared: "../../../../values/shared.module.css";
+@value primary, secondary, tertiary, critical-width from shared;
+
+.diet-plan-table {
+  margin: 0 !important;
+  padding: 4px 0 4px 4px;
+  background-color: rgba(255, 255, 255, 1) !important;
+  border-color: tertiary !important;
+  border: 1px solid;
+  table-layout: fixed;
+}
+
+.th-buttons {
+  overflow: hidden; /* Ensure content doesn't overflow */
+  text-overflow: ellipsis; /* Add ellipsis for long content */
+  white-space: nowrap; /* Prevent text from wrapping to the next line */
+}
+.td-buttons button {
+  outline: none;
+}
+.delete-button {
+  border: none;
+  background-color: inherit;
+  color: rgba(255, 156, 156, 1);
+}
+.delete-button:hover,
+.delete-button:active {
+  border: none;
+  color: red;
+}
+.form-control {
+  overflow: hidden; /* Ensure content doesn't overflow outside the input */
+  text-overflow: clip;
+  white-space: nowrap; /* Prevent text from wrapping to the next line */
+  padding: 0 !important;
+  text-align: center;
+  border: none !important;
+  background-color: inherit !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.active-input::after {
+  content: "✏️"; /* Leftward pencil icon */
+  color: #8bc34a;
+  margin-left: 5px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none; /* Hide the spin buttons */
+  margin: 0; /* Adjust margin if needed */
+}
+
+input[type="number"] {
+  -moz-appearance: textfield; /* Hide the spin buttons for Firefox */
+}
+
+/* Default font size for larger screens */
+.diet-plan-table th,
+.diet-plan-table td {
+  padding: 8px 0 8px 0  !important;
+  font-size: 16px; /* Default size */
+  white-space: nowrap; /* Prevents text from wrapping to the next line */
+  overflow: hidden; /* Hides any overflowed text */
+  text-overflow: ellipsis; /* Adds an ellipsis (...) */
+  vertical-align: middle; /* Center align content vertically */
+}
+
+/* For screens smaller than 768px (tablets and smaller devices) */
+@media (max-width: 768px) {
+  .diet-plan-table th,
+  .diet-plan-table td {
+    font-size: 14px; /* Smaller font size */
+  }
+}
+
+/* For screens smaller than 576px (mobile devices) */
+@media (max-width: 576px) {
+  .diet-plan-table th,
+  .diet-plan-table td {
+    font-size: 12px; /* Even smaller font size */
+  }
+}
+
+.time-col {
+  width: 75px !important;
+}
+.grams-col {
+  inline-size: 18%;
+}
+.name-col {
+  inline-size: 35%;
+}
+.mid-col {
+  inline-size: 12%;
+}
+.pfc-col {
+  inline-size: 10%;
+}
+.buttons-col{
+  inline-size: 7%;
+}
+.time-select {
+  display: flex;
+  align-items: center; /* Vertically center align items */
+}
+
+.hours-dropdown,
+.minutes-dropdown {
+  width: 50px; /* Set a narrower width for the dropdowns */
+  margin: 0; /* Remove all margins */
+  padding: 2px; /* Optional: Add some padding for better touch targets */
+}
+
+.time-select span {
+  margin: 0 2px; /* Adjust margin around the colon to reduce distance */
+  font-weight: bold; /* Make the colon slightly bolder for emphasis */
+}

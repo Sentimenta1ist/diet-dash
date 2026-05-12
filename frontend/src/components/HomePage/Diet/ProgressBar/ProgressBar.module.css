@@ -1,0 +1,59 @@
+/* ProgressBar.module.css */
+.progressBar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+.circleWrapper {
+    position: relative;
+    width: 60px;
+    /* Adjusted width to match the smaller circle */
+    height: 60px;
+    /* Adjusted height to match the smaller circle */
+}
+
+.progressCircle {
+    transform: rotate(-90deg);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.progressInfo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.progressValue {
+    font-size: 12px;
+    /* Smaller font size for the value */
+}
+
+.progressDivider {
+    width: 100%;
+    /* Adjusted width for the smaller circle */
+    border-bottom: 2px solid #999;
+    margin: 2px 0;
+    /* Adjusted margin for the smaller circle */
+}
+
+.progressGoal {
+    font-size: 12px;
+    /* Smaller font size for the goal */
+}
+
+.progressLabel {
+    margin-top: 8px;
+    font-size: 12px;
+    /* Smaller font size for the label */
+    text-align: center;
+}

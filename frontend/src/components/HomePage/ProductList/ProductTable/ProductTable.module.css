@@ -1,0 +1,40 @@
+.product-list-table {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 !important;
+    padding: 16px;
+    background-color: rgba(255, 255, 255, 1) !important;
+    border-radius: 16px;
+    border-color: rgba(205, 236, 198, 1) !important;
+    border: 1px solid;
+  }
+  .thead-row {
+    color: rgba(16, 38, 13, 0.7);
+  }
+  .table-col {
+    border-right: 1px solid rgba(205, 236, 198, 1) !important;
+    padding: 4px !important;
+    text-align: center !important;
+    align-items: center;
+    font-family: "Rubik" !important;
+    font-size: 16px !important;
+    overflow: hidden;
+  }
+  .table-col-text-input {
+    padding: 0 !important;
+  }
+  .table-col input {
+    padding: 0 0 0 15px;
+    border: none;
+    text-align: center !important;
+  }
+  .table-col input:focus {
+    box-shadow: none !important;
+  }
+  .table-col input:active {
+    text-align: center !important;
+  }
+  .table-col:last-child {
+    border-right: none !important; /* Remove the border from the last and penultimate columns */
+  }

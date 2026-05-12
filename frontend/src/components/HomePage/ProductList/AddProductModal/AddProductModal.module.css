@@ -1,0 +1,93 @@
+@value shared: "../../../../values/shared.module.css";
+@value primary, secondary, tertiary, critical-width, red-pink from shared;
+
+/* Overlay to cover the screen */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal content centered */
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  max-height: 90vh;
+  /* Cap height to leave room for footer */
+  box-shadow: 0 5px 15px rgba(45, 19, 19, 0.3);
+  z-index: 1001;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  /* Scroll if content exceeds max-height */
+}
+
+/* Adjustments for small screens */
+@media (max-height: 600px) {
+  .modal-content {
+    max-height: calc(100vh - 120px);
+    /* 60px footer + 60px top margin */
+    margin-top: 60px;
+    /* Space from top */
+    margin-bottom: 60px;
+    /* Space for footer */
+  }
+}
+
+@media (max-width: 400px) {
+  .modal-content {
+    width: 90%;
+    /* Responsive width for very small screens */
+  }
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.modal-actions button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.modal-actions button[type="submit"] {
+  background-color: primary;
+  color: white;
+}
+
+.modal-actions button[type="button"] {
+  background-color: red-pink;
+  color: white;
+}

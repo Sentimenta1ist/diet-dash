@@ -1,0 +1,283 @@
+@value shared: "../../../../values/shared.module.css";
+@value secondary-critical-width, primary, back1 from shared;
+
+.dietTable {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    max-height: 30vh;
+    padding: 16px;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 16px;
+    border: 1px solid rgba(205, 236, 198, 1);
+    position: relative;
+    overflow-x: auto;
+}
+
+.headerRow {
+    display: grid;
+    grid-template-columns: 25% 40% 15% 20%;
+    /* Fixed width ratios */
+    font-weight: 400;
+    color: #10260db3;
+    min-width: 100%;
+}
+
+.headerCol {
+    padding: 2px;
+    text-align: center;
+    font-family: "Rubik";
+    font-size: 16px;
+    border-right: 1px solid rgba(205, 236, 198, 1);
+}
+
+.headerCol:nth-child(3) {
+    border-right: none;
+}
+
+.headerCol:last-child {
+    border-right: none;
+}
+
+.tableRowWrapper {
+    position: relative;
+}
+
+.tableRow {
+    display: grid;
+    grid-template-columns: 25% 40% 15% 20%;
+    /* Same ratios as header */
+    color: rgba(16, 38, 13, 0.7);
+    align-items: center;
+    min-width: 100%;
+}
+
+.tableCol {
+    border-right: 1px solid rgba(205, 236, 198, 1);
+    padding: 4px;
+    text-align: center;
+    color: #212529;
+    font-family: "Rubik";
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.tableCol:nth-child(2) {
+    /* Ensure the text itself is truncated */
+    width: 100%;
+    max-width: 100%;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.tableCol:nth-child(3) {
+    border-right: none;
+}
+
+.tableCol:last-child {
+    border-right: none;
+}
+
+.timeInput {
+    padding: 2px;
+    font-size: px;
+    border: none;
+    border-radius: 4px;
+    font-family: "Rubik";
+    width: 100px;
+    text-align: center;
+    background-color: white;
+}
+
+.timeInput.invalid-time {
+    border-color: #ff4d4f;
+}
+
+.gramsInput {
+    width: 40px;
+    padding: 2px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.actionsCol {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 4px;
+}
+
+.infoButton {
+    background: none;
+    border: none;
+    color: rgba(84, 128, 84, 1);
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 0;
+}
+
+.infoButton:hover {
+    color: rgba(60, 90, 60, 1);
+}
+
+.deleteButton {
+    background: none;
+    border: none;
+    color: #ff4d4f;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 0;
+}
+
+.deleteButton:hover {
+    color: #cc0000;
+}
+
+.expandedInfo {
+    position: absolute;
+    padding: 16px;
+    top: 70%;
+    right: 0%;
+    transform: translateX(-10%);
+    width: 300px;
+    background-color: back1;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1006;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+}
+
+.expandedInfo * {
+    line-height: 24px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.expandedInfo.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.expandedHeaderRow {
+    display: flex;
+    flex-direction: row;
+    font-weight: 400;
+    color: #10260db3;
+}
+
+.expandedHeaderCol {
+    flex: 1;
+    padding: 4px;
+    text-align: center;
+    font-family: "Rubik";
+    font-size: 14px;
+    border-right: 1px solid rgba(205, 236, 198, 1);
+}
+
+.expandedHeaderCol:last-child {
+    border-right: none;
+}
+
+.expandedDataRow {
+    display: flex;
+    flex-direction: row;
+}
+
+.expandedDataCol {
+    flex: 1;
+    padding: 4px;
+    text-align: center;
+    color: #212529;
+    font-family: "Rubik";
+    font-size: 14px;
+    border-right: 1px solid rgba(205, 236, 198, 1);
+}
+
+.expandedDataCol:last-child {
+    border-right: none;
+}
+
+/* Mobile Styles */
+@media (max-width: secondary-critical-width) {
+    .headerRow {
+        grid-template-columns: 30% 35% 15% 20%;
+        /* Adjusted for mobile */
+    }
+
+    .tableRow {
+        grid-template-columns: 30% 35% 15% 20%;
+        /* Same as header */
+        padding: 8px 0;
+    }
+
+    .tableCol {
+        padding: 2px;
+        font-size: 14px;
+    }
+
+    .tableCol:nth-child(1) {
+        min-width: 50px;
+    }
+
+    .tableCol:nth-child(2) {
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .tableCol:nth-child(3) {
+        min-width: 50px;
+    }
+
+    .actionsCol {
+        gap: 5px;
+    }
+
+    .infoButton {
+        display: block;
+    }
+}
+
+@media (max-width: 450px) {
+    .dietTable {
+        padding: 8px;
+    }
+
+    .headerRow {
+        grid-template-columns: 30% 35% 15% 20%;
+    }
+
+    .tableRow {
+        grid-template-columns: 30% 35% 15% 20%;
+    }
+
+    .expandedInfo {
+        width: 90%;
+        transform: translateX(-5%);
+    }
+
+    .timeInput {
+        width: 50px;
+    }
+
+    .tableCol:nth-child(2) {
+        font-size: 13px;
+        /* Slightly smaller text for very small screens */
+        width: calc(100%);
+        max-width: 150px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}

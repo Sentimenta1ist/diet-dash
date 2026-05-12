@@ -1,0 +1,50 @@
+@value shared: "../../../values/shared.module.css";
+@value primary, secondary, tertiary, critical-width from shared;
+
+.footer {
+    display: none;
+    /* Hidden by default on larger screens */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 1);
+    border-top: 1px solid tertiary;
+    padding: 10px 0;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1000;
+}
+
+.button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 1);
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    color: rgb(6, 33, 2);
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
+    padding: 8px;
+    min-width: 80px;
+    cursor: pointer;
+    outline: none;
+}
+
+.button-active {
+    background-color: tertiary;
+}
+
+.button span {
+    margin-top: 4px;
+}
+
+/* Show footer only on mobile screens */
+@media (max-width: critical-width) {
+    .footer {
+        display: flex;
+    }
+}

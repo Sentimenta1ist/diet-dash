@@ -1,0 +1,167 @@
+@value shared: "../../../../values/shared.module.css";
+@value primary, secondary, tertiary, critical-width from shared;
+
+.searchDropdown {
+  min-block-size: inherit;
+  position: relative;
+  width: 100%;
+}
+
+.searchForm {
+  width: 100%;
+  min-block-size: inherit;
+}
+
+.searchInputContainer {
+  min-block-size: inherit;
+  display: flex;
+  line-height: 40px;
+  font-family: "Rubik";
+  align-items: center;
+  position: relative;
+  gap: 8px;
+  border: 1px solid tertiary;
+  border-radius: 16px;
+  padding-right: 8px;
+}
+
+.searchInputContainer input::placeholder {
+  font-size: 17px;
+  line-height: 26px;
+  font-family: inherit;
+  font-weight: 400;
+  color: rgba(16, 38, 13, 0.7);
+}
+
+.icon {
+  color: primary;
+}
+
+.searchInput {
+  font-family: inherit;
+  font-weight: 500;
+  padding-left: 8px;
+  border: none;
+  color: var(--primary-color);
+  border-radius: inherit;
+  width: 100%;
+  font-size: 18px;
+  /* Default size */
+}
+
+.searchInputOpen {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.searchInputClosed {
+  border-bottom-left-radius: 16px !important;
+  border-bottom-right-radius: 16px !important;
+}
+
+.searchInput:focus {
+  outline: none;
+}
+
+.dropdownMenuWrapper {
+  background: white;
+  position: absolute;
+  /* Ensure it aligns properly with the parent */
+  top: calc(100% - 1px);
+  /* Adjust to align with the bottom of the input */
+  left: 0;
+  width: 100%;
+  border: 1px solid tertiary;
+  border-radius: 0 0 12px 12px;
+  z-index: 1000;
+  border-top: none;
+  box-sizing: border-box;
+  /* Include padding in the width/height calculation */
+}
+
+.dropdownMenu {
+  left: 0;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  line-height: 1;
+  scrollbar-color: primary white;
+  margin-bottom: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* Should include padding in the width/height */
+}
+
+.dropdownItem {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Rubik";
+  cursor: pointer;
+}
+
+.dropdownMenu .dropdownItem:first-child div span {
+  font-weight: 400;
+  font-size: 16px;
+  opacity: 60%;
+}
+
+.dropdownItemContent {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 8px;
+}
+
+.dropdownItem:hover {
+  background: tertiary;
+  border-radius: 8px;
+}
+
+.customButton {
+  border: none;
+  background-color: inherit;
+}
+
+.dropdownItemLabel {
+  text-align: left;
+  font-size: 17px;
+  line-height: 22px;
+  font-weight: 400;
+  color: rgba(6, 33, 2, 1);
+}
+
+.dropdownItemText {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: rgba(16, 38, 13, 0.7);
+}
+
+.dropdownButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 8px;
+  padding: 0 1px 0 0;
+  outline: none;
+}
+
+@media (min-width: 1360px) {
+  .searchInput {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .searchInput {
+    font-size: 22px;
+  }
+}
+
+@media (min-width: 1800px) {
+  .searchInput {
+    font-size: 24px;
+  }
+}

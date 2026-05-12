@@ -1,0 +1,101 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  /* Allows the page to grow indefinitely */
+  background-color: #e9f5d9;
+  /* Light green background */
+}
+
+.board {
+  background-color: #B1F2BC;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 900px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* Pushes title and button apart */
+  margin-bottom: 20px;
+}
+
+.title {
+  text-align: center;
+  font-size: 36px;
+  color: #004d00;
+  /* Darker green for the title */
+  font-family: "Comic Sans MS", sans-serif;
+  margin: 0;
+  /* Remove default margin for alignment */
+}
+
+.shareButton {
+  background-color: #004d00;
+  /* Dark green background */
+  color: #fff;
+  /* White text */
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 16px;
+  font-family: "Comic Sans MS", sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.shareButton:hover {
+  background-color: #006400;
+  /* Slightly lighter green on hover */
+}
+
+.table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 10px;
+  text-align: left;
+  font-size: 18px;
+  font-family: "Comic Sans MS", sans-serif;
+}
+
+.table th {
+  background-color: #d3e6d9;
+  /* Light green for the header */
+}
+
+.dateCell {
+  font-size: 22px;
+  font-weight: bold;
+  color: #000000 !important;
+  /* Black color for the date */
+  text-align: center;
+}
+
+.table td {
+  color: #006400;
+  /* Green text for the other content */
+}
+
+/* Alternating row colors for readability */
+.table tr:nth-child(even) {
+  background-color: #d3e6d9;
+}
+
+/* Loader styling */
+.loader {
+  text-align: center;
+  padding: 20px;
+  font-size: 18px;
+  color: #004d00;
+  font-family: "Comic Sans MS", sans-serif;
+}

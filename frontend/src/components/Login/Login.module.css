@@ -1,0 +1,286 @@
+.Login {
+  display: flex;
+  justify-content: center;
+  block-size: 100vh;
+  inline-size: 100%;
+  margin: 0 auto;
+}
+
+/* General styling for the email input */
+.email-input {
+  font-family: "Rubik", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #10260d; /* Default color */
+  border: none;
+  padding: 0px;
+  outline: none;
+  inline-size: inherit !important;
+  flex: 1;
+}
+
+.email-input::placeholder,
+.email-input.not-empty::placeholder {
+  color: rgba(
+    16,
+    38,
+    13,
+    0.7
+  ); /* Example color, you can change it to your desired color */
+}
+
+/* Styling when the email input field is not empty */
+.email-input.not-empty {
+  color: #062102; /* Change this to the desired color */
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  inline-size: 90%;
+  min-inline-size: 304px;
+  max-inline-size: 504px;
+  max-block-size: 512px;
+  gap: 10px;
+  padding: 80px 64px;
+  background: #ffffff;
+  border-radius: 24px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  box-shadow: 0px 15px 34px 0px rgba(228, 228, 212, 1),
+    0px 61px 61px 0px rgba(228, 228, 212, 0.09),
+    0px 138px 83px 0px rgba(228, 228, 212, 0.05),
+    0px 245px 98px 0px rgba(228, 228, 212, 0.01),
+    0px 382px 107px 0px rgba(228, 228, 212, 0);
+}
+
+.text {
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+}
+
+h2 {
+  font-family: "Rubik" !important;
+  font-weight: 700 !important;
+}
+
+.login-form input {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 0px 2px;
+  border: none;
+  inline-size: 100%;
+  block-size: 20px;
+  outline: none;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+.right-side-wrapper {
+  position: relative; /* Required for child absolute positioning */
+  display: flex;
+  flex-direction: column;
+  width: 52%;
+  height: 100%;
+}
+
+.right-side {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1; /* Make this element take up all remaining space */
+}
+
+.input-padding {
+  padding-inline-start: 12px;
+}
+
+.input-label {
+  font-family: "Rubik", sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  color: rgba(16, 38, 13, 0.8);
+  text-align: start;
+}
+
+.left-align {
+  text-align: start;
+}
+
+.right-align {
+  text-align: end;
+}
+
+.form-group {
+  padding: 0px 0 0 12px;
+  background: #ffffff;
+  border: 1px solid #548054;
+  border-radius: 12px;
+  outline: olive;
+  inline-size: 100%;
+  height: 56px;
+}
+
+.form-group-warpper {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
+
+.input-container {
+  display: flex;
+}
+
+.input-container input {
+  flex-grow: 1; /* Allow the input to take available space */
+}
+.input-with-button {
+  display: flex;
+  align-items: center;
+  block-size: 100%;
+}
+.login-input {
+  display: flex;
+  width: 95%;
+  flex-direction: column;
+}
+
+.show-password-button {
+  padding-right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.show-password-button i {
+  font-size: 16px;
+}
+
+.pt-2 {
+  padding-top: 0.5rem; /* Adjust this value to set the desired top padding */
+}
+.bi-eye {
+  color: #548054;
+}
+
+.forgot-password {
+  font-family: "Rubik", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  color: rgba(33, 33, 33, 1);
+  text-align: right;
+}
+
+/* Custom styles for links */
+.no-underline-link {
+  text-align: end;
+  text-decoration: none;
+  color: inherit; /* Inherit color from parent or define your own color */
+}
+
+.no-underline-link:hover {
+  text-decoration: underline;
+}
+
+.signup {
+  font-family: "Rubik", sans-serif;
+  font-size: 16px;
+  line-height: 44px;
+  font-weight: 500;
+  color: rgba(33, 33, 33, 1);
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+.continue-button {
+  width: 100%;
+  height: 56px;
+  color: rgba(246, 246, 246, 1);
+  background-color: rgba(84, 128, 84, 1);
+  border: none;
+  border-radius: 16px;
+}
+.inside-form {
+  display: flex;
+  inline-size: 100%;
+  flex-direction: column;
+  gap: 24px;
+}
+.error-message {
+  color: red;
+}
+.confirmation-message-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.confirmation-message {
+  font-family: "Rubik", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: rgba(33, 33, 33, 1);
+}
+
+.login-link {
+  display: flex;
+  justify-content: center;
+}
+
+.login-link a {
+  font-family: "Rubik", sans-serif;
+  font-size: 22px;
+  line-height: 24px;
+  font-weight: 400;
+  color: rgba(33, 33, 33, 1);
+}
+.languageSelector {
+  position: absolute; /* Enables precise positioning relative to the parent */
+  top: 5%; /* Distance from the top */
+  right: 10%; /* Distance from the right */
+  color: #10260d;
+}
+
+@media (max-width: 768px) {
+  .left-side {
+    display: none; /* Hide left side on mobile */
+  }
+
+  .right-side {
+    inline-size: 100%; /* Make right side take full width */
+  }
+  .login-form {
+    padding: 16px;
+    background-color: inherit;
+  }
+  .inside-form {
+    display: flex;
+    flex-direction: column;
+    inline-size: 100%;
+    gap: 12px;
+  }
+}
+@media (max-width: 369px) {
+  .no-underline-link {
+    font-size: 15px;
+  }
+  .login-form {
+    padding: 8px;
+  }
+}
+@media (max-width: 1100px) and (min-width: 769px) {
+  .login-form {
+    padding: 40px 32px;
+  }
+}

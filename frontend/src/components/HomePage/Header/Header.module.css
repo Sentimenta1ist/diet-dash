@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&family=Macondo+Swash+Caps&display=swap');
+@value shared: "../../../values/shared.module.css";
+@value primary, secondary, tertiary, critical-width from shared;
+
+.header {
+  display: flex;
+  inline-size: 100%;
+  padding: 16px 32px;
+  align-items: center;
+  color: black;
+  background: rgba(255, 255, 255, 1);
+  border: 1px solid tertiary;
+  border-radius: 24px;
+  flex-wrap: wrap;
+  --group-gap: 20px;
+  /* Custom property for manual gap control */
+}
+
+.left-group,
+.right-group {
+  display: flex;
+  height: 48px;
+  align-items: center;
+}
+
+.left-group {
+  margin: 0 !important;
+}
+
+.right-group {
+  gap: 20px;
+  margin-left: auto;
+  /* Pushes right-group to the right edge */
+}
+
+.logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.header-buttons-group-one {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+}
+
+.header-buttons-last {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: end;
+  gap: 5px;
+  min-width: 150px;
+}
+
+.header-buttons-last>* {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.header-buttons-group-one>* {
+  min-inline-size: 140px;
+  inline-size: 15vw;
+}
+
+.button {
+  height: 100%;
+  min-inline-size: 140px;
+  display: flex;
+  flex: 1;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 1);
+  border: 1px solid tertiary;
+  border-radius: 16px;
+  font-size: 18px;
+  text-decoration: none;
+  padding: 0px 8px;
+  color: rgb(6, 33, 2);
+  font-family: "Rubik", sans-serif;
+  font-weight: 500;
+}
+
+.button-premium {
+  border: none;
+  background-color: inherit;
+  outline: none;
+  font-family: "Akaya Kanadaka", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 32px;
+  color: #529C4F;
+}
+
+.header-buttons-group-one>*:focus {
+  outline: none;
+}
+
+.header-buttons-group-one>.button-active {
+  background-color: tertiary;
+}
+
+.avatar {
+  height: 100%;
+}
+
+.avatar-container {
+  height: 100%;
+  cursor: pointer;
+  position: relative;
+  /* Position relative to this container */
+  /* Ensure the dropdown is positioned relative to this container */
+}
+
+@media (max-width: 1200px) {
+  .header {
+    display: none;
+  }
+}
+
+@media (min-width: 1360px) {
+  .left-group {
+    gap: 80px;
+    /* Increase gap within left-group */
+    margin-right: var(--group-gap);
+  }
+
+  .right-group {
+    gap: 20px;
+    /* Increase gap within right-group */
+  }
+
+  .header-buttons-group-one {
+    gap: 20px;
+    /* Increase gap within left button group */
+  }
+
+  .header-buttons {
+    gap: 20px;
+    /* Increase gap between buttons */
+  }
+
+  .header-buttons-last {
+    gap: 10px;
+    /* Increase gap within last group */
+    min-width: 180px;
+    /* Slightly wider for larger screens */
+  }
+
+  .header-buttons-group-one>* {
+    inline-size: 15vw;
+    font-size: 20px;
+  }
+
+  .button {
+    padding: 0px 16px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .header-buttons-group-one>* {
+    inline-size: 16vw;
+    font-size: 22px;
+  }
+}
+
+@media (min-width: 1800px) {
+  .header-buttons-group-one>* {
+    inline-size: 17vw;
+  }
+}

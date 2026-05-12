@@ -1,0 +1,187 @@
+@value shared: "../../../../values/shared.module.css";
+@value primary, secondary, tertiary, critical-width, protein-col, carbs-col, fat-col, kcal-col from shared;
+
+.searchDropdown {
+  position: relative;
+  border-color: tertiary !important;
+  border: 1px solid;
+  border-radius: 16px;
+  padding: 16px !important;
+}
+
+.searchInputContainer {
+  display: flex;
+  font-family: "Rubik";
+  align-items: center;
+  position: relative;
+  gap: 8px;
+}
+
+.searchInputContainer input::placeholder {
+  font-size: 17px;
+  line-height: 22px;
+  font-weight: 400;
+  color: rgba(16, 38, 13, 0.7);
+}
+
+.icon {
+  color: primary;
+}
+
+.search-input-wrapper {
+  flex-grow: 1;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 4px;
+}
+
+.searchInput:focus {
+  outline: none;
+}
+
+.dropdownMenu {
+  width: 100%;
+  background: white;
+  border: none;
+  overflow-y: auto;
+  z-index: 1000;
+  padding: 0 4px 0 0 !important;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.dropdownItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 4px 4px 0px;
+  font-family: "Rubik";
+  cursor: pointer;
+  border-bottom: 1px solid tertiary;
+  width: 100%;
+}
+
+.dropdownItem:last-child {
+  border-bottom: none;
+}
+
+.dropdownItemContent {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.dropdownItemInfo {
+  display: flexbox;
+  max-width: calc(100% - 29.5px);
+  text-overflow: ellipsis;
+  /* Add ellipsis for long content */
+}
+
+.dropdownItem:hover {
+  border-radius: 12px;
+  background: rgba(205, 236, 198, 0.2);
+}
+
+.dropdownButtons {
+  display: flex;
+  gap: 5px;
+}
+
+.customButton {
+  border: none;
+  background-color: inherit;
+}
+
+.dropdownItemLabel {
+  white-space: nowrap;
+  text-align: left;
+  font-size: 17px;
+  line-height: 22px;
+  font-weight: 400;
+  color: rgba(6, 33, 2, 1);
+}
+
+.dropdownItemText {
+  text-align: left;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: rgba(16, 38, 13, 0.7);
+}
+
+.hackyOffPageElement {
+  position: "relative";
+  bottom: "-70vh";
+  display: "block";
+  height: "10px";
+  width: "10px";
+}
+
+.diet-items-scrollable-container {
+  padding-right: 10px;
+
+  /* Custom scrollbar styling */
+  scrollbar-width: thin;
+  /* For Firefox */
+  scrollbar-color: #888 transparent;
+  /* For Firefox */
+}
+
+/* For WebKit browsers like Chrome, Safari, Edge */
+.diet-items-scrollable-container::-webkit-scrollbar {
+  width: 8px;
+  /* Adjust scrollbar width */
+}
+
+.diet-items-scrollable-container::-webkit-scrollbar-thumb {
+  background-color: #888;
+  /* Color of the scrollbar */
+  border-radius: 10px;
+  /* Rounded edges for thumb */
+}
+
+.diet-items-scrollable-container::-webkit-scrollbar-track {
+  background: transparent;
+  /* Background of the scrollbar track */
+}
+
+.kcal {
+  color: kcal-col;
+}
+
+.protein {
+  color: protein-col;
+}
+
+.carbs {
+  color: carbs-col;
+}
+
+.fat {
+  color: fat-col;
+}
+
+.created-product {
+  color: secondary;
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: critical-width) {
+  .searchDropdown {
+    padding: 8px !important;
+    font-size: 14px;
+  }
+
+  .diet-items-scrollable-container {
+    padding-right: 0;
+  }
+
+  .dropdownMenu {
+    padding-right: 0;
+  }
+}

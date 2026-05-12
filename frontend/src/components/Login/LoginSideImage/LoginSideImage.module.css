@@ -1,0 +1,45 @@
+.left-side {
+  inline-size: 48%;
+  background-image: url("../../../images/login-page-image.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+}
+
+.centered-container {
+  display: flex; /* Use Flexbox */
+  justify-content: left; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100%; /* Full viewport height */
+  width: 100%; /* Full width */
+}
+
+.text {
+  font-family: "Rubik", sans-serif; /* Specify the font family */
+}
+
+.centered-text {
+  display: flexbox;
+  padding-left: 8%;
+  justify-content: center;
+  font-size: 72px; /* Set the font size */
+  font-weight: 700; /* Set the font weight */
+  line-height: 86.4px; /* Set the line height */
+  max-width: 750px;
+  color: #000000;
+}
+@media (max-width: 1100px) {
+  .centered-text {
+    font-size: 48px;
+    line-height: 70px; /* Set the line height */
+  }
+}
+@media (max-width: 768px) {
+  .left-side {
+    display: none;
+  }
+}
+
+.highlight {
+  color: rgba(84, 128, 84, 1); /* Change this to the shade of green you want */
+}

@@ -1,0 +1,292 @@
+{
+  "home": {
+    "name": "Ім'я",
+    "surname": "Прізвище",
+    "enterName": "Введіть ім'я",
+    "enterSurname": "Введіть прізвище",
+    "allProfiles": "Усі профілі",
+    "clientStatistics": "Статистика клієнтів",
+    "nutritionFormulas": "Формули харчування",
+    "allProducts": "Усі продукти",
+    "settings": "Налаштування"
+  },
+  "login": {
+    "loginMotto": "Трансформація здоров'я пацієнтів через харчування",
+    "signIn": "Увійти",
+    "email": "Електронна пошта",
+    "password": "Пароль",
+    "forgotPassword": "Забули пароль?",
+    "continue": "Продовжити",
+    "newUserSignUp": "Новий користувач? Зареєструватися",
+    "passwordRecovery": "Відновлення паролю",
+    "checkLinkInMailbox": "Посилання було відправлено на пошту",
+    "enterNewPassword": "Введіть новий пароль",
+    "passwordResetSuccess": "Пароль успішно змінено",
+    "goToLogin": "Перейти на сторінку входу",
+    "passwordResetError": "Помилка зміни паролю. Можливо, ви перейшли за неправильним посиланням",
+    "tryAgain": "Спробувати ще раз",
+    "fillAllFields": "Заповніть усі поля",
+    "invalidEmail": "Перевірте правильність електронної пошти"
+  },
+  "signup": {
+    "title": "Зареєструватися",
+    "emailLabel": "Електронна пошта",
+    "passwordLabel": "Пароль",
+    "confirmPasswordLabel": "Підтвердіть пароль",
+    "continueButton": "Продовжити",
+    "emailError": "Будь ласка, введіть дійсну адресу електронної пошти",
+    "passwordError": "Пароль обов'язковий",
+    "confirmPasswordError": "Будь ласка, підтвердіть свій пароль",
+    "passwordMismatchError": "Паролі не збігаються",
+    "confirmationMessage": "Посилання для підтвердження реєстрації було надіслано на вашу електронну адресу, якщо вона вже не використовується.",
+    "loginPageLink": "Перейти на сторінку входу",
+    "startJourney": "Почніть свій шлях до",
+    "betterHealth": "Кращого здоров'я"
+  },
+  "profile": {
+    "profile": "Профіль",
+    "clientInfo": "Інформація про клієнта",
+    "fullName": "Повне ім'я",
+    "age": "Вік",
+    "gender": "Стать",
+    "weight": "Вага",
+    "height": "Зріст",
+    "waist": "Талія",
+    "hips": "Стегна",
+    "aimWeight": "Цільова вага",
+    "dietaryData": "Дієтичні дані",
+    "bodyMassIndex": "Індекс маси тіла",
+    "idealBodyWeight": "Ідеальна вага тіла",
+    "dailyCalorieNorm": "Добова норма калорій",
+    "selectedCalorieLimit": "Вибраний ліміт калорій",
+    "protein": "Білки",
+    "carbs": "Вуглеводи",
+    "fat": "Жири",
+    "kg": "кг",
+    "cm": "см",
+    "g": "г",
+    "male": "Чоловік",
+    "female": "Жінка",
+    "other": "Інше",
+    "selectGender": "",
+    "selectActivity": "Виберіть активність",
+    "kcal": "ккал",
+    "": ""
+  },
+  "diet": {
+    "progressBars": {
+      "calories": "Калорії",
+      "carbs": "Вуглеводи",
+      "protein": "Білки",
+      "fat": "Жири"
+    },
+    "dietPlan": {
+      "header": "План дієти",
+      "exportButton": "Експорт",
+      "selectDateRange": "Виберіть діапазон дат",
+      "startDate": "З дати",
+      "endDate": "По дату",
+      "cancel": "Скасувати",
+      "export": "Експортувати",
+      "fileExport": "Експортувати у файл",
+      "linkExport": "Експортувати на сторінку",
+      "duplicate": "Дублювати",
+      "selectTargetDate": "Виберіть дати",
+      "yourRation": "Ваш раціон"
+    },
+    "columns": {
+      "time": "Час",
+      "product": "Назва",
+      "grams": "Грами",
+      "calories": "Ккал",
+      "protein": "Б",
+      "fat": "Ж",
+      "carbs": "В",
+      "actions": ""
+    },
+    "buttons": {
+      "edit": "Редагувати",
+      "delete": "Видалити",
+      "save": "Зберегти",
+      "addProduct": "Додати продукт"
+    },
+    "addProduct": {
+      "title": "Додати продукт",
+      "grams": "Грами",
+      "time": "Час",
+      "addToRation": "Додати до раціону",
+      "cancel": "Скасувати",
+      "add": "Додати",
+      "selected": "Вибраний продукт",
+      "selectDate": "Оберіть дату",
+      "gramsPlaceholder": "Грами"
+    },
+    "datepicker": {
+      "placeholder": "Оберіть дату"
+    },
+    "searchDropdown": {
+      "placeholder": "Пошук продуктів"
+    },
+    "messages": {
+      "productAdded": "Продукт успішно додано до раціону",
+      "errorFetching": "Помилка під час отримання даних"
+    }
+  },
+  "productList": {
+    "allProducts": "Усі продукти",
+    "name": "Назва",
+    "grams": "Грами",
+    "calories": "Ккал",
+    "protein": "Білки",
+    "fat": "Жири",
+    "carbs": "Вуглеводи",
+    "addYourProduct": "Додайте свій продукт",
+    "addProduct": "Додати продукт",
+    "filters": {
+      "all": "Усі",
+      "global": "Загальні",
+      "personal": "Особисті"
+    }
+  },
+  "profileList": {
+    "name": "Ім'я",
+    "age": "Вік",
+    "gender": "Стать",
+    "height": "Зріст",
+    "weight": "Вага",
+    "calories": "Калорії",
+    "open": "Відкрити",
+    "yourProfiles": "Ваші профілі",
+    "noProfilesMessage": "Немає створених профілів",
+    "delete": "Видалити",
+    "confirmDelete": "Ви впевнені, що хочете видалити цей профіль? Видалення цього профілю назавжди видалить усі пов’язані з ним плани дієт, щоденні записи та дані про прогрес. Цю дію неможливо скасувати."
+  },
+  "notFound": {
+    "heading": "Ця сторінка недоступна",
+    "message": "Ви перейшли за пошкодженим посиланням або сторінку видалено.",
+    "goHome": "Повернутися на головну"
+  },
+  "addProfile": {
+    "namePlaceholder": "Ім'я",
+    "createProfileButton": "Створити профіль"
+  },
+  "emailConfirmation": {
+    "title": "Підтвердження електронної пошти",
+    "loading": "Завантаження...",
+    "successMessage": "Вашу електронну пошту успішно підтверджено! Перенаправлення на вхід...",
+    "errorMessage": "Щось пішло не так. Спробуйте ще раз або зверніться до служби підтримки.",
+    "loginPageLink": "Перейти на сторінку входу"
+  },
+  "profileSearchDropdown": {
+    "searchPlaceholder": "Пошук",
+    "addNewProfile": "Додати новий профіль"
+  },
+  "header": {
+    "profile": "Профіль",
+    "diet": "Дієта",
+    "productList": "Продукти",
+    "allProfiles": "Усі профілі",
+    "home": "Головна",
+    "dropdownMenu": {
+      "account": "Акаунт",
+      "support": "Підтримка",
+      "settings": "Налаштування",
+      "logout": "Вихід"
+    }
+  },
+  "productSearchDropdown": {
+    "searchPlaceholder": "Пошук",
+    "grams": "г",
+    "time": "",
+    "kcal": "Калорії",
+    "protein": "Білки",
+    "carbs": "Вуглеводи",
+    "fat": "Жири",
+    "addProduct": "Додати",
+    "created": "Створений"
+  },
+  "pagination": {
+    "previous": "Попередня",
+    "next": "Наступна",
+    "page": "сторінка",
+    "of": "з"
+  },
+  "caloriesShort": {
+    "grams": "Грами",
+    "calories": "Ккал",
+    "protein": "Б-ки",
+    "carbs": "В-ди",
+    "fat": "Жири"
+  },
+  "premiumModal": {
+    "title": "Розблокуйте Diet Dash Premium",
+    "whyUpgrade": "Що ви отримаєте?",
+    "createProfiles": "Створюйте <strong> безліч профілів </strong> для ваших клієнтів",
+    "designMeals": "Розроблюйте свої власні <strong> страви </strong> з точним відслідковуванням калорій і макронутрієнтів",
+    "prioritySupport": "24/7 пріоритетна <strong> підтримка </strong> — допомога, коли це потрібно",
+    "accessAI": "Будьте першими, хто отримає доступ до всіх <strong>ШІ-можливостей</strong>",
+    "detailedReports": "<strong> Детальні звіти та аналітика </strong> — відстежуйте прогрес і оптимізуйте свою роботу",
+    "firstMonthFree": "Перший <strong> місяць безкоштовно </strong>, далі $8 на місяць",
+    "freeMonth": "Безкоштовний місяць"
+  },
+  "premiumRequired": {
+    "title": "Доступно для Premium",
+    "message": "Щоб скористатися цією функцією, оновіть свій план до Premium.",
+    "upgrade": "Оновити"
+  },
+  "logoutModal": {
+    "areYouSure": "Ви впевнені, що хочете вийти?",
+    "confirm": "Підтвердити",
+    "cancel": "Скасувати"
+  },
+  "landingPage": {
+    "heroHeader": "Покращте свою ефективність як ",
+    "heroHeaderHighlight": "дієтолог, автоматизуйте планування дієт сьогодні",
+    "heroText": "Заощаджуйте години на розрахунках, створюйте персоналізовані плани та керуйте клієнтами за допомогою нашої універсальної платформи.",
+    "heroButtonGuide": "БЕЗКОШТОВНИЙ ПОСІБНИК ДЛЯ СТАРТУ",
+    "heroButtonPlatform": "ПЕРЕЙТИ ДО ПЛАТФОРМИ",
+    "helpHeader": "Втомилися витрачати години на ручне ",
+    "helpHeaderHighlight": "створення планів харчування та управління клієнтами",
+    "helpHeaderSecond": "? Наша платформа робить усе це за вас - Миттєво!",
+    "helpText": "Наша платформа надає дієтологам інструменти для роботи з клієнтами: калькулятор калорій і створення профілів, CRM для управління клієнтами та база рецептів із точною інформацією про склад.",
+    "footerHeader": "Маєте запитання? Ми тут, щоб допомогти – звертайтеся будь-коли!",
+    "footerAddress": "Sir John Rogerson's Quay, Dublin",
+    "footerEmail": "diet.dash.agent@gmail.com",
+    "footerText": "Ми готові до будь-яких запитань і пропозицій!"
+  },
+  "benefitsTable": {
+    "sectionTitle": "Усе, що потрібно дієтологу",
+    "calorieCalculatorTitle": "Калькулятор калорій",
+    "calorieCalculatorDescription": "Зручний інструмент для точного підрахунку калорій у дієтах ваших клієнтів. Дозволяє швидко створювати персоналізовані плани харчування.",
+    "creatingProfilesTitle": "Створення профілів",
+    "creatingProfilesDescription": "Можливість створювати детальні профілі клієнтів на основі їхніх індивідуальних потреб і цілей. Допомагає краще зрозуміти потреби кожного клієнта.",
+    "crmTitle": "CRM для управління клієнтами",
+    "crmDescription": "Ефективне управління базою клієнтів. Можливість відстежувати прогрес кожного клієнта та аналізувати результати роботи.",
+    "recipeDatabaseTitle": "База рецептів",
+    "recipeDatabaseDescription": "Велика база рецептів із точною інформацією про інгредієнти.",
+    "personalizedMealPlansTitle": "Персоналізовані плани харчування",
+    "personalizedMealPlansDescription": "Створення індивідуальних планів харчування на основі точних розрахунків і рекомендацій. Враховує особливості кожного клієнта та допомагає досягти поставлених цілей.",
+    "reportsAnalyticsTitle": "Звіти та аналітика",
+    "reportsAnalyticsDescription": "Детальні звіти та аналітика щодо роботи з клієнтами."
+  },
+  "startGuide": {
+    "title": "Прискорте та покращте свою роботу",
+    "subtitle": "Наша платформа допомагає залучати більше клієнтів, спрощуючи планування дієт — без додаткових інструментів!",
+    "emailLabel": "Електронна пошта",
+    "emailPlaceholder": "Електронна пошта",
+    "nameLabel": "Ім'я",
+    "namePlaceholder": "Олена Монако",
+    "phoneLabel": "Телефон (необов’язково)",
+    "phonePlaceholder": "+123 456 7890",
+    "submitButton": "БЕЗКОШТОВНИЙ ПОСІБНИК ДЛЯ ПОЧАТКУ",
+    "submitting": "Відправлення...",
+    "footerText": "Почніть використовувати наші інструменти вже сьогодні!",
+    "successMessage": "Запит успішно надіслано! Перевірте свою електронну пошту для отримання посібника.",
+    "errorMessage": "Не вдалося надіслати запит. Будь ласка, спробуйте ще раз.",
+    "networkErrorMessage": "Сталася помилка. Будь ласка, спробуйте ще раз пізніше."
+  },
+  "search": "Пошук",
+  "cancel": "Скасувати",
+  "confirm": "Підтвердити",
+  "exit": "Вийти"
+}

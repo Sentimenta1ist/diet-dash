@@ -1,0 +1,19 @@
+@import '~react-date-range/dist/styles.css'; // Correct import for base styles
+@import '~react-date-range/dist/theme/default.css'; // Correct import for theme styles
+
+.rdrCalendar,
+.rdrMonth,
+.rdrDay,
+.rdrSelected,
+.rdrStaticRangeLabel,
+.rdrMonthPicker,
+.rdrYearPicker,
+.rdrInputRange,
+.rdrDateInput {
+    font-family: 'Rubik';
+}
+
+// Additional styling for the month if needed
+.rdrMonth {
+    color: #969eac;
+}

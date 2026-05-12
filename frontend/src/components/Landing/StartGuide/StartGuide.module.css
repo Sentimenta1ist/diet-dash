@@ -1,0 +1,243 @@
+.startGuideWrapper {
+    max-height: 110vh;
+    padding: 4rem 0;
+    background-color: #FFFFF9;
+}
+
+.startGuide {
+    background-image: url('../../../images/landing-salmon.jpg');
+    border-radius: 40px;
+    background-size: cover;
+    background-position: center;
+    min-height: 80vh;
+    max-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90vw;
+    margin-left: -5vw;
+    overflow: visible;
+    position: relative;
+    padding: 2rem;
+    font-family: "Rubik";
+    color: #062102;
+}
+
+.formContainer {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 40px;
+    max-width: 500px;
+    width: 100%;
+    /* Full width within parent */
+    position: static;
+    transform: none;
+    max-height: 90vh;
+    /* Increased to allow more content */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-left: auto;
+    margin-right: -8rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Rest of your styles remain unchanged */
+.title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.subtitle {
+    font-family: "Rubik";
+    font-size: 1.25rem;
+    color: #666;
+    margin-bottom: 0.2rem;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.1rem;
+}
+
+.input {
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.input:focus {
+    border-color: #548054;
+}
+
+.submitButton {
+    background-color: #548054;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submitButton:hover {
+    background-color: #3a5d3a;
+}
+
+.submitButton:disabled {
+    background-color: #a0a0a0;
+    cursor: not-allowed;
+}
+
+.message {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 0;
+    text-align: center;
+    min-height: 1.5rem;
+}
+
+.footerText {
+    font-size: 1.25rem;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.error-message {
+    color: red;
+}
+
+.success-message {
+    color: #062102;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .startGuideWrapper {
+        padding: 0;
+    }
+
+    .startGuide {
+        width: 100%;
+        margin-left: 0;
+        border-radius: 20px;
+        padding: 1.5rem;
+    }
+
+    .formContainer {
+        position: static;
+        transform: none;
+        max-width: 100%;
+        /* Full width on small screens */
+        margin: 0 auto;
+        padding: 1.5rem;
+        /* Slightly reduced padding */
+        max-height: none;
+        /* Remove height restriction */
+    }
+}
+
+/* Additional media query for very small screens (e.g., 376px width) */
+@media (max-width: 425px) {
+    .startGuide {
+        padding: 0.4rem;
+        /* Keep minimal padding */
+    }
+
+    .formContainer {
+        padding: 1rem;
+        /* Reduce padding further */
+        border-radius: 20px;
+        /* Smaller radius */
+    }
+
+    .form {
+        gap: 0.5rem;
+        /* Reduced from 0.3rem for better spacing */
+    }
+
+    .title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        text-align: center;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+        /* Slightly smaller */
+        margin-bottom: 0.7rem;
+        text-align: center;
+        line-height: 1.4;
+        /* Adjusted for compactness */
+    }
+
+    .formGroup {
+        margin-bottom: 0.5rem;
+        /* Ensure spacing between groups */
+    }
+
+    .label {
+        font-size: 0.9rem;
+        /* Smaller labels */
+        margin-bottom: 0.3rem;
+    }
+
+    .input {
+        padding: 0.5rem;
+        /* Reduced padding */
+        font-size: 0.9rem;
+        /* Smaller input text */
+    }
+
+    .submitButton {
+        padding: 0.6rem 1rem;
+        /* Smaller button */
+        font-size: 1rem;
+        /* Slightly smaller text */
+        margin-bottom: 0.5rem;
+    }
+
+    .footerText {
+        font-size: 1rem;
+        /* Smaller text */
+        margin-bottom: 0;
+    }
+
+    .message {
+        font-size: 0.9rem;
+        /* Smaller message */
+        min-height: 1.2rem;
+        /* Adjusted for smaller text */
+    }
+}
+
+@media (min-width: 769px) and (max-height: 720px) {
+    .startGuideWrapper {
+        height: 120vh;
+    }
+
+    .formContainer {
+        min-height: 660px;
+    }
+}

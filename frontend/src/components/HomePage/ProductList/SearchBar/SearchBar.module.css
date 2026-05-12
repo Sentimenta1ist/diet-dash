@@ -1,0 +1,66 @@
+@value shared: "../../../../values/shared.module.css";
+@value primary, secondary, tertiary, secondary-critical-width from shared;
+
+.search__header {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.search {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding: 16px;
+  gap: 4px;
+  border-radius: 16px;
+  border-color: tertiary !important;
+  border: 1px solid;
+}
+
+.search__input {
+  flex-grow: 1;
+  width: 100%;
+  border: none;
+}
+
+.search__input::placeholder {
+  color: rgba(16, 38, 13, 0.7);
+}
+
+.search__input:focus {
+  outline: none;
+}
+
+.search__icon {
+  color: primary;
+  border: none;
+  background-color: inherit;
+}
+
+.search__button {
+  color: rgba(246, 246, 246, 1);
+  font-family: "Rubik";
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  border-radius: 12px;
+  gap: 10px;
+  padding: 7px 24px;
+  border: none;
+  background-color: primary;
+  outline: none;
+}
+
+/* Hide button on mobile */
+@media (max-width: secondary-critical-width) {
+  .search__button {
+    display: none;
+  }
+
+  .search {
+    padding: 0;
+    /* Adjust padding for mobile if needed */
+    border: none;
+  }
+}

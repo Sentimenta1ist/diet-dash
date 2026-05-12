@@ -1,0 +1,54 @@
+.section {
+    background-color: #FFFFF9;
+    padding: 4rem 0;
+}
+
+.sectionTitle {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #062102;
+}
+
+.sectionText {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.card {
+    background-color: inherit;
+    border-radius: 12px;
+    border: 1px #CDECC6 solid;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px #CDECC6;
+}
+
+.cardBody {
+    padding: 1.5rem;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    display: inline;
+}
+
+.cardTitle {
+    font-family: "Rubik";
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.cardText {
+    font-family: "Rubik";
+    font-weight: 400;
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5;
+}

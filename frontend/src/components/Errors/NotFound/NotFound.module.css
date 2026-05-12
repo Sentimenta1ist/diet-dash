@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background-image: url("../../../images/background.svg");
+  background-size: cover; /* Adjust the background size */
+  background-position: center; /* Center the background image */
+  padding: 32px;
+  text-align: center;
+}
+
+.container h1 {
+  color: rgb(26, 67, 26);
+  font-size: 3rem;
+  margin-bottom: 64px;
+}
+
+.container p {
+  color: rgb(8, 88, 8);
+  font-size: 2rem;
+  margin-bottom: 24px;
+}
+
+.container a {
+  font-size: 2.25rem;
+  color: rgb(8, 88, 8); /* Adjust the link color as needed */
+  text-decoration: none;
+}
+
+.container a:hover {
+  text-decoration: underline;
+}
