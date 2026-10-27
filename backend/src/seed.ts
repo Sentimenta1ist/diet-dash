@@ -4,6 +4,7 @@ import { join } from 'path'
 import { randomUUID } from 'crypto'
 import bcrypt from 'bcryptjs'
 import sql from './db.js'
+import { config } from './config.js'
 
 function capitalize(s: string): string {
   return s ? s.charAt(0).toUpperCase() + s.slice(1) : s
@@ -120,10 +121,11 @@ async function seedProducts(): Promise<number> {
 }
 
 async function seedTestUser(): Promise<boolean> {
+  if (!config.testUserPassword) return false
   const existing = await sql`SELECT id FROM app_user WHERE login = 'test@dietdash.com'`
   if (existing.length > 0) return false
 
-  const hashedPassword = await bcrypt.hash('***REMOVED***', 10)
+  const hashedPassword = await bcrypt.hash(config.testUserPassword, 10)
   const confirmationToken = randomUUID()
 
   const [{ id: userId }] = await sql<[{ id: number }]>`
@@ -164,7 +166,7 @@ export async function seed(): Promise<void> {
   const userCreated = await seedTestUser()
   console.log(
     userCreated
-      ? '[seed] Test user created: test@dietdash.com / ***REMOVED***'
-      : '[seed] Test user already exists.',
+      ? '[seed] Test user created: test@dietdash.com'
+      : '[seed] Test user skipped (exists or TEST_USER_PASSWORD not set).',
   )
 }

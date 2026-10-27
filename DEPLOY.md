@@ -92,11 +92,11 @@ api.diet-dash.qear.net → IP твоего VPS
 Нажми **Deploy**. В логах должно появиться:
 ```
 [seed] Tables ready.
-[seed] Test user created: test@dietdash.com / ***REMOVED***
+[seed] Test user created: test@dietdash.com
 Diet Dash backend running on port 5000
 ```
 
-Если тест-юзер уже был: `[seed] Test user already exists.` — тоже OK.
+Тест-юзер создаётся, только если задана переменная `TEST_USER_PASSWORD`. Без неё: `[seed] Test user skipped ...` — тоже OK.
 
 Проверь что бекенд работает:
 ```bash
@@ -135,7 +135,7 @@ REACT_APP_API_URL=https://api.diet-dash.qear.net/api
 ## Шаг 5 — Проверка
 
 1. Открой `https://diet-dash.qear.net` — должна открыться landing page
-2. Войди: `test@dietdash.com` / `***REMOVED***`
+2. Войди: `test@dietdash.com` / пароль из `TEST_USER_PASSWORD`
 3. Должен открыться Diet plan с профилем "Default"
 4. Попробуй добавить продукт и экспортировать рацион
 
@@ -181,7 +181,7 @@ git push
 - Посмотри логи бекенда при старте
 - Можно сбросить пароль через базу:
   ```sql
-  -- Получить новый хэш можно запустив: node -e "const b=require('bcryptjs'); b.hash('***REMOVED***',10).then(console.log)"
+  -- Получить новый хэш можно запустив: node -e "const b=require('bcryptjs'); b.hash('<новый пароль>',10).then(console.log)"
   UPDATE app_user SET password='$2a$10$...' WHERE login='test@dietdash.com';
   ```
 

@@ -14,4 +14,6 @@ export const config = {
   mailtrapEndpoint: 'https://send.api.mailtrap.io/api/send',
   mailFrom: 'diet.dash.agent@gmail.com',
   contactEmail: 'ivanenko.dev@gmail.com',
+  // Optional: seed a demo PRO user (test@dietdash.com) with this password on startup
+  testUserPassword: process.env.TEST_USER_PASSWORD ?? '',
 }
